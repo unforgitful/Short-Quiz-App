@@ -13,13 +13,15 @@ h1, .question-container {
 }
 
 h1 {
-  margin: 25px;
+  margin: 2em;
   color: white;
+
 }
 
 .question-container {
-  margin: 10px;
+  margin: 20px;
   padding: 20px;
+  text-align: center;
   border-radius: 18px;
   background-color: hsl(157, 59%, 70%);
 }
@@ -41,6 +43,13 @@ h1 {
   gap: 10px;
 }
 
+h1, 
+.question-text, 
+.question-answers, 
+.answer-button {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .answer-button {
   border: none;
   border-radius: 5px;
@@ -52,7 +61,24 @@ h1 {
   background-color: hsl(0, 0%, 80%);
 }
 
-.score-section {
+.reset-button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 32px;
+  border: none;
+  border-radius: 5px;
+  color: #f1f1f1;
+  background-color: hsl(157, 59%, 50%);
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background-color: hsl(157, 59%, 35%);
+}
+
+.score-section, 
+p {
+  margin-bottom: 10px;
   text-align: center;
   color: white;
 }
@@ -60,4 +86,12 @@ h1 {
 img {
   margin-top: 10px;
   width: 250px;
+}
+
+
+/* MEDIA QUERY CSS SECTION */
+@media only screen and (max-width: 700) {
+  .question-container {
+    margin: 80%;
+  }
 }

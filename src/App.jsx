@@ -4,6 +4,7 @@ import victory from './assets/yippie.gif'
 import defeat from './assets/you-lost.webp'
 import wsound from './assets/wsound.mp3'
 import lsound from './assets/lsound.mp3'
+import TryAgainButton from './TryAgainButton.jsx'
 
 
 function App() {
@@ -26,25 +27,35 @@ function App() {
     }
 
   }
+
+  const resetQuiz = () => {
+    setCurrentQuestion(0);
+    setScore(0);
+    setShowScore(false);
+  }
+
+
   return (
     <>
       <h1>Short Quiz App</h1>
       {showScore ? (
         <div className="score-section">
           You scored {score} out of {questions.length}
-          {score >= 3 ?(
+          {score >= 3?(
             <div>
               <img src={victory} alt="Victory!" />
-              {/* Did not remove/hide audio controls for user adjustments. */}
-             <audio src={wsound} autoPlay  />
+              {/* Add "control" next to autoplay for audio controls. */}
+             {/* <audio src={wsound} autoPlay  /> */}
               <p>You passed the quiz! Yippie!</p>
+              <TryAgainButton onReset={resetQuiz}></TryAgainButton>
             </div>
           ) : (
             <div>
               <img src={defeat} alt="Defeat..." />
-              {/* Did not remove/hide audio controls for user adjustments. */}
-              <audio src={lsound} autoPlay />
+              {/* Add "control" next to autoplay for audio controls. */}
+              {/* <audio src={lsound} autoPlay /> */}
               <p>Better luck next time!</p>
+                <TryAgainButton onReset={resetQuiz}></TryAgainButton>
             </div>
           )}
         </div>

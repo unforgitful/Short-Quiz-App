@@ -45,7 +45,7 @@ function App() {
             <div>
               <img src={victory} alt="Victory!" />
               {/* Add "control" next to autoplay for audio controls. */}
-             {/* <audio src={wsound} autoPlay  /> */}
+             <audio src={wsound} autoPlay  />
               <p>You passed the quiz! Yippie!</p>
               <TryAgainButton onReset={resetQuiz}></TryAgainButton>
             </div>
@@ -53,7 +53,7 @@ function App() {
             <div>
               <img src={defeat} alt="Defeat..." />
               {/* Add "control" next to autoplay for audio controls. */}
-              {/* <audio src={lsound} autoPlay /> */}
+              <audio src={lsound} autoPlay />
               <p>Better luck next time!</p>
                 <TryAgainButton onReset={resetQuiz}></TryAgainButton>
             </div>
